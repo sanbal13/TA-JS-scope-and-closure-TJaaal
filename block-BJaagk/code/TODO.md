@@ -8,15 +8,18 @@ function percentage(marks, total) {
 // Your code goes here
 let percent = function percentage(marks, total) {
   return (marks * 100) / total;
-}
+};
 
 let percent = function (marks, total) {
   return (marks * 100) / total;
-}
+};
 
-let percent = function (marks, total) => {
+let percent = (marks, total) => {
   return (marks * 100) / total;
-}
+};
+
+let percent = (marks, total) =>  (marks * 100) / total;
+
 ```
 
 2. Write Function Declaration or Function Expression next to the function.
@@ -26,9 +29,7 @@ function percentage(marks, total) {
   return (marks * 100) / total;
 }
 // Your answer
-let percent = function (marks, total) {
-  return (marks * 100) / total;
-};
+Function Declaration
 ```
 
 ```js
@@ -36,9 +37,7 @@ let percentage = function percentage(marks, total) {
   return (marks * 100) / total;
 };
 // Your Answer
-function percentage(marks, total) {
-  return (marks * 100) / total;
-}
+Function Expression 
 ```
 
 ```js
@@ -46,9 +45,7 @@ let percentage = function (marks, total) {
   return (marks * 100) / total;
 };
 //Your Answer
-function percentage(marks, total) {
-  return (marks * 100) / total;
-}
+Function Expression 
 ```
 
 ```js
@@ -56,21 +53,17 @@ let percentage = (marks, total) => {
   return (marks * 100) / total;
 };
 //Your Answer
-function percentage(marks, total) {
-  return (marks * 100) / total;
-}
+Function Expression 
 ```
 
 ```js
 let percentage = (marks, total) => (marks * 100) / total;
 //Your Answer
-function percentage(marks, total) {
-  return (marks * 100) / total;
-}
+Function Expression 
 ```
 
 3. Why is a function definition an expression in JavaScript? Give one example of function expression.  
-In JavaScript function is an object. We can assign an object to a variable. So, we can asign a function to a variable. Therefore, function definition acts as an expression in JavaScript.
+In JavaScript function is an object. We can assign an object to a variable. So, we can asign a function to a variable. Therefore, function definition acts as an expression in JavaScript. A function always returns a value.(undefined when nothing is returned)
 ```js
 let add = function (a, b) {
   return a + b;
@@ -108,6 +101,9 @@ five = function () {
   ```
 
 7. What is the similarities between function definition and function call?
+Both are expression.
+function definition is an object.
+function call returns a value.
 
 
 8. Is the code below valid or invalid. Explain with reason.
@@ -121,7 +117,7 @@ hello.user = 'Sam'; // VALID //hello is a function. A function in js is an objec
 ```
 
 9. What is higher order function explain with an example.  
-Higher order function is the one which either accepts function as an argument or returns function or both.
+Higher order function is the one which either accepts function definition as an argument or returns function definition or both.
 ```js
 function multiplyBy(num) {
     return function(num2) {
