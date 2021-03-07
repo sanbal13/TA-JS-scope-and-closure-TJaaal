@@ -1,18 +1,30 @@
-1. What does thread of execution means in JavaScript?
+1. What does thread of execution means in JavaScript?    
+Thread of execution is the piece of code that needs to be executed.
 
-2. Where the JavaScript code gets executed?
+2. Where the JavaScript code gets executed?  
+Inside JavaScript Engine
 
-3. What does context means in Global Execution Context?
+3. What does context means in Global Execution Context?  
+Context is the environment in which the code is executed.
 
-4. When do you create a global execution context.
+4. When do you create a global execution context.  
+Global Execution Context is created only once for each program. It is created at the begining of execution.
 
-5. Execution context consists of what all things?
+5. Execution context consists of what all things?  
+It consists of :  
+* Memory
+* Computation section
 
 6. What are the different types of execution context?
+* Global execution context  
+* Functional execution context
 
 7. When global and function execution context gets created?
+* Global execution context is created only once at the start of execution of code. 
+* Functional execution context is created every time a function is called.
 
-8. Function execution gets created during function execution or while declaring a function.
+8. Function execution gets created during function execution or while declaring a function.  
+During function execution
 
 
 9. Create a execution context diagram of the following code on your notebook. Take a screenshot/photo and store it in the folder named `img`. Use `![](./img/image-name.png)` to display it here.
@@ -31,7 +43,7 @@ var userMsg = sayHello(user);
 
 <!-- Put your image here -->
 
-![](./img/image-name.jpg)
+![](./img/image-1.jpg)
 
 
 
@@ -49,7 +61,7 @@ var percentageProfit = getPercentage(400, 200);
 
 <!-- Put your image here -->
 
-![](./img/image-name.jpg)
+![](./img/image-2.jpg)
 
 
 
@@ -70,4 +82,4 @@ var whoAmIAgain = customeMessage(12);
 
 <!-- Put your image here -->
 
-![](./img/image-name.jpg)
+![](./img/image-3.jpg)
