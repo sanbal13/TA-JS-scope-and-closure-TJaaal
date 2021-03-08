@@ -86,8 +86,6 @@ console.log(one, two, three, four); // 5
 
 - Create the execution context diagram
 - What will be the value of 1, 2, 3, 4 and 5 or error if the code does not work
-* 1 - 'One'  
-* 2 - 'Two'  
-* 3 - 'Three'  
+git   
 * 4 - Error(four is not defined)  
-* 5 - Error(one is not defined)
+
