@@ -7,6 +7,9 @@ The returned function accepts a sentence. If the sentence contains the `fromWord
 ```js
 function censor(fromWord, toWord) {
   //  Your code goes here
+  return function(sentence) {
+         return sentence.slice(0, sentence.indexOf(fromWord)) + toWord + sentence.slice(sentence.indexOf(fromWord)+fromWord.length);
+  };
 }
 
 let censorSentence = censor('World', 'Sam');
@@ -25,8 +28,24 @@ The returned function either accepts two parameter or one parameter.
 
 ```js
 function multipleCensor() {
-  //  Your code goes here
-}
+  let words =[];
+  let output;
+  return function(...arrays) {
+    if(arrays.length === 2) {
+      words.push(arrays[0]);
+      words.push(arrays[1]);
+    } else {
+            output = arrays[0];
+          for(let i = 0; i < words.length; i = i + 2) {
+            if(output.includes(words[i])) {
+              output = output.slice(0, output.indexOf(words[i])) + words[i+1] + output.slice(output.indexOf(words[i])+ words[i].length);
+            }
+          }
+          return output;
+      }    
+    }
+  }
+
 
 let censorQuote = multipleCensor();
 censorQuote('forget', 'remember'); // two parameter no return
@@ -49,8 +68,15 @@ The returned function accepts one parameter.
 - If the parameter is the same as the password it will return the object in which we stored the values.
 
 ```js
-function createCache() {
-  // Your code goes here
+function createCache(callBack, passwrd) {
+  let obj = {};
+  return function(pass) {
+    if(pass === passwrd) {
+      return obj;
+    } else {
+      obj[pass] = callBack(pass);
+    }
+  };
 }
 
 function add10(num) {
@@ -69,8 +95,19 @@ addCache('foo'); // {12: 22, 100: 110, 1: 11}
 4. Change the above function in such a way that when the returned function is called with any other value than password. It should first check the object where we are storing the argument and return value. If the key is present return the value form the object itself. Otherwise call the callback function with the parameter.
 
 ```js
-function createCache() {
-  // Your code goes here
+function createCache(callBack, passwrd) {
+  let obj = {};
+  return function(pass) {
+    if(pass === passwrd) {
+      return obj;
+    } else {
+      if(pass in obj){
+        return obj[pass];
+      } else
+      obj[pass] = callBack(pass);
+      return obj[pass];
+    }
+  };
 }
 
 function add10(num) {
