@@ -2,8 +2,16 @@
 
 ```js
 function once(cb) {
-  // your code goes here
-}
+  let flag = 0;
+ 
+  return function() {
+      if(flag === 0) {
+      alert ("You can only call me once!");    
+      }
+      flag = 1; 
+  }
+  }
+
 
 // TEST
 function sayHello() {
@@ -17,9 +25,16 @@ log(); // return undefinde (can't be called twice)
 2. Change the above function in such a way that the function accepts two parameter a callback function and parameter for the callback function. When calling the function pass the parameters.
 
 ```js
-function once(cb) {
-  // your code goes here
-}
+function once(cb, msg) {
+  let flag = 0;
+ 
+  return function cb() {
+      if(flag === 0) {
+      alert (msg);    
+      }
+      flag = 1; 
+  }
+  }
 
 // TEST
 let log = once(console.log, 'Hello Console');
@@ -34,9 +49,16 @@ log(); // return undefinde (can't be called twice)
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters
 
 ```js
-function once(cb) {
-  // your code goes here
-}
+function once(cb, ...arrays) {
+  let flag = 0;
+ 
+  return function () {
+      if(flag === 0) {
+      cb (arrays.join(" "));    
+      }
+      flag = 1; 
+  }
+  }
 
 // TEST
 let log = once(console.log, 'Message one', 'Message Two');
@@ -48,8 +70,14 @@ log(); // return undefinde (can't be called twice)
 
 ```js
 function nTimes(cb, times, ...rest) {
-  // your code goes here
-}
+ let flag = 0; 
+  return function () {
+      if(flag < times) {
+      cb (rest.join(" "));    
+      }
+      flag++; 
+  }
+  }
 
 // TEST
 let log = (msg) => console.log(msg);
